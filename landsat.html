@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NASAExplorer">
+    <meta name="apple-mobile-web-app-title" content="NASAExplorer">
+    <meta name="theme-color" content="#000001">
+    <meta name="msapplication-navbutton-color" content="#000001">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This page will show a landsat image, if available for a given location of latitude and longitude near a given date at a select zoom level.">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/pluto-192x192.png">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/pluto-192x192.png">
+    <title>Landsat 8</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="container">
+            <li> <a href="index.html">Home</a></li>
+            <li> <a href="apod.html">APOD</a></li>
+            <li> <a href="neo.html">Asteroids</a></li>
+            <li> <a href="landsat.html">Landsat</a></li>
+            <li> <a href="gallery.html">Gallery</a></li>
+            <li> <a href="settings.html">Settings</a></li>
+        </ul>
+    </nav>
+
+    <figure>
+        <picture>
+            <source type="image/webp" srcset="images/4x/earth.webp"
+                    media="(min-width:2400px)">
+            <source type="image/jpeg" srcset="images/fallback/earth4x.jpg"
+                    media="(min-width:2400px)">
+            <source type="image/webp" srcset="images/3x/earth.webp"
+                    media="(min-width:1800px)">
+            <source type="image/jpeg" srcset="images/fallback/earth3x.jpg"
+                    media="(min-width:1800px)">
+            <source type="image/webp" srcset="images/2x/earth.webp"
+                    media="(min-width:1200px)">
+            <source type="image/jpeg" srcset="images/fallback/earth2x.jpg"
+                    media="(min-width:1200px)">
+            <source type="image/webp" srcset="images/1x/earth.webp"
+                    media="(min-width:600px)">
+            <source type="image/jpeg" srcset="images/fallback/earth1x.jpg"
+                    media="(min-width:600px)">
+            <img src="images/fallback/earth1x.jpg" alt="A composite satellite image of the Northern hemisphere of Earth.">
+        </picture>
+    </figure>
+
+    <header>
+        <h1>Landsat 8.</h1>
+    </header>
+    <article>
+        <figure>
+            <img id="landsatImg" src="images/fallback/spacewalk1x.jpg" alt="Lonely astronaut on spacewalk"
+            srcset="images/fallback/spacewalk1x.jpg, images/fallback/spacewalk2x.jpg 2x, images/fallback/spacewalk3x.jpg 3x, images/fallback/spacewalk4x.jpg 4x">
+        </figure>
+        <section id="geoOutput"></section>
+    </article>
+
+    <article>
+        <label for="landsatDate">Select date:</label>
+        <input type="date" id="landsatDate" name="Landsat Date"
+        value="" min="2013-08-01" max="" required>
+        
+        <label for="zoomSelect">Zoom Level:</label>
+        <select name="zoom" id="zoomSelect">
+            <option value="0.2">--Please choose a zoom level--</option>
+            <option value="0.1">High</option>
+            <option value="0.2">Medium</option>
+            <option value="0.3">Low</option>
+        </select>
+        <button type="button" id="satDateButton">Get Location</button>
+    </article>
+
+    <footer>
+        <h2>Goals for this page:<br><em>(Subject to change.)</em></h2>
+        <ul>
+            <li>Should use the browser location data to display a Landsat image. DONE</li>
+            <li>Potential to change Landsat date. DONE</li>
+            <li>Potentially with zoom alteration in three choices. - Three choices of selection. DONE</li>
+            <li>Validate with dates no later than today, not before 8 years ago. min/max dates. DONE</li>
+        </ul>
+    </footer>
+
+    <script>
+      //check whether browser support service workers
+      if ('serviceWorker' in navigator) {
+          //wait until page loaded to avoid delaying rendering
+          window.addEventListener('load', function() {
+              //register service worker
+              navigator.serviceWorker.register('serviceworker.js').then(
+                  function(registration) {
+                      console.log('Service worker registration successful',
+                                   registration);
+                  },
+                  function(err) {
+                      console.log('Service worker registration failed', err);
+              });
+          });
+      }
+    </script>
+    <script src="scripts/landsat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+    "name": "NASA API Explorer",
+    "short_name": "NASAExplorer",
+    "description": "Displays interesting pictures of the day, shows information about NEO and land satellite imagery.",
+    "lang": "en-GB",
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "theme_color": "#000001",
+    "icons": [
+      {
+        "src": "/images/pluto-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/images/pluto-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "background_color": "white"
+  }
