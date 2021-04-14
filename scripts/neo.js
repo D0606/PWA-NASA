@@ -5,11 +5,11 @@ const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const currentTheme = localStorage.getItem("mode");
 const getTable = document.getElementById("neoTable");
 const printBody = document.getElementById("neoTableBody");
-const dateBtn = document.getElementById("neoDateButton");
 const getDate = document.getElementById("neoDate");
+const dateForm = document.getElementById("neoDateForm");
 var tableBody = "";
 
-dateBtn.addEventListener("click", getNEO);
+dateForm.addEventListener("submit", getNEO);
 
 function getToday(){
     var today = new Date();
@@ -28,7 +28,8 @@ function getToday(){
     getDate.setAttribute("value", today);
 }
 
-function getNEO() {
+function getNEO(event) {
+    event.preventDefault();
     //console.log(getDate.value);
     fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${getDate.value}&end_date=${getDate.value}&api_key=Z9vNJRtaCbaIrzOk6PAROFfpbFvdTlpW0k59SRhL`).then(function(response) {
         //could also return response.text() 

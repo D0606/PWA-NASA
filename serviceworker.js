@@ -1,4 +1,6 @@
 //set up cache name and files to add to it
+const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+const type = connection.effectiveType;
 const CACHE_NAME = 'NASA-API-Assignment-v1';
 const CACHE_URLS = ['index.html',
                     'apod.html',
@@ -96,6 +98,24 @@ const CACHE_URLS = ['index.html',
                     'images/gallery/crop-nasa-satellitecloud9x16.webp',
                     'images/gallery/crop-nasa-satellitecloud9x16.jpg',
                     'manifest.json',
+                    'scripts/connection.js',
+                    'scripts/home.js',
+                    'scripts/apod.js',
+                    'scripts/landsat.js',
+                    'scripts/neo.js',
+                    'scripts/gallery.js',
+                    'scripts/settings.js',
+                    'styles/styles.css'
+];
+const CACHE_URLS_2G = ['index.html',
+                    'apod.html',
+                    'gallery.html',
+                    'landsat.html',
+                    'neo.html',
+                    'settings.html',
+                    'styles/images/Banner_Starfield.jpg',
+                    'manifest.json',
+                    'scripts/connection.js',
                     'scripts/home.js',
                     'scripts/apod.js',
                     'scripts/landsat.js',
@@ -113,7 +133,17 @@ self.addEventListener("install", function(event) {
         caches.open(CACHE_NAME)
         .then(function(cache) {
             console.log("Cache opened");
+            if(type) {
+                switch(type) {
+                    case "4g":
+                        return cache.addAll(CACHE_URLS);
+                    default:
+                        return cache.addAll(CACHE_URLS_2G);
+                }
+            }
             //add all URLs to cache
+            
+
             return cache.addAll(CACHE_URLS);
         })
     );
@@ -156,5 +186,4 @@ self.addEventListener("fetch", function(event) {
             return fetch(event.request);
         })
     );
-
 });

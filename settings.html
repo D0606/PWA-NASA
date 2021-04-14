@@ -32,7 +32,10 @@
             <li> <a href="settings.html">Settings</a></li>
         </ul>
     </nav>
-    <figure>
+    <article>
+        <section class="centred" id="bandWarn"></section>
+    </article>
+    <figure class="centred">
         <picture>
             <source type="image/webp" srcset="images/4x/astronaut.webp"
                     media="(min-width:2400px)">
@@ -53,24 +56,20 @@
             <img src="images/fallback/astronaut1x.jpg" alt="An astronaut working in space.">
         </picture>
     </figure>
-    <h1>Settings.</h1>
+    <h1 class="centred">Settings</h1>
     
 
-    <p> Click to toggle dark mode </p>
-    <button id="nightToggle">Toggle Night Mode</button>
+    <p class="centred"> Click to toggle dark mode </p>
+    <button id="nightToggle">Toggle Day/Night Mode</button>
 
-    <footer>
-        <h2>Goals for this page:<br><em>(Subject to change.)</em></h2>
+    <footer class="centred">
+        <strong>TODO:</strong>
     <ul>
-        <li>Colour scheme changer. Probably not.</li>
-        <li>Night mode. DONE</li>
+        <li>Nowt.</li>
     </ul>
-        <p>Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a></p>
-        <p>Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and 
-            <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on 
-            <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
     
+    <script src="scripts/connection.js"></script>
     <script>
       //check whether browser support service workers
       if ('serviceWorker' in navigator) {

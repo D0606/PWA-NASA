@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="images/pluto-192x192.png">
     <link rel="apple-touch-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="512x512" href="images/pluto-192x192.png">
-    <title>Asteroids</title>
+    <title>Near Earth Objects</title>
 </head>
 
 <body>
@@ -32,7 +32,10 @@
             <li> <a href="settings.html">Settings</a></li>
         </ul>
     </nav>
-    <figure>
+    <article>
+        <section class="centred" id="bandWarn"></section>
+    </article>
+    <figure  class="centred">
         <picture>
             <source type="image/webp" srcset="images/4x/asteroids.webp"
                     media="(min-width:2400px)">
@@ -53,7 +56,13 @@
             <img src="images/fallback/asteroids1x.jpg" alt="A CGI field of asteroids backlit by the sun.">
         </picture>
     </figure>
-    <h1>Asteroids.</h1>
+    <h1 class="centred">Near Earth Objects (Orbiting Asteroids)</h1>
+
+    <form id="neoDateForm" class="form-inline">
+        <label for="neoDate">Select date:</label>
+        <input type="date" id="neoDate" name="NEO Date" value="" min="1900-01-01" max="2201-01-01" required>
+        <button type="submit" id="neoDateButton">Search</button>
+    </form>
     
     <table id="neoTable" style="width: 100%;">
         <caption>Table of Near Earth Objects</caption>
@@ -72,19 +81,14 @@
         <tbody id="neoTableBody"></tbody>
     </table>
 
-    <label for="neoDate">Select date:</label>
-    <input type="date" id="neoDate" name="NEO Date" value="" min="1900-01-01" max="2201-01-01" required>
-    <button type="button" id="neoDateButton">Search</button>
-
-    <footer>
-        <h2>Goals for this page:<br><em>(Subject to change.)</em></h2>
+    <footer class="centred">
+        <strong>TODO:<br></strong>
         <ul>
-            <li>Tabular form of asteroids. DONE</li>
-            <li>Work on table formatting for headers - different heights on smaller screens!</li>
-            <li>Display next day? Previous day?</li>
+            <li>Nowt.</li>
         </ul>
     </footer>
 
+    <script src="scripts/connection.js"></script>
     <script>
       //check whether browser support service workers
       if ('serviceWorker' in navigator) {

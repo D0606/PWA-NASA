@@ -1,180 +1,296 @@
+/*General Styling*/
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
 body {
     font: 1em system-ui, sans-serif;
     background-color: rgb(213, 216, 223);
 }
-
-.large {
-    font-size: 2em;
-
+.centred {
+    list-style-position: inside;
+    text-align: center;
 }
-
-.container {
-  display: flex;
-  list-style-type: none;
-  background-image: url("images/Banner_Starfield.jpg");
-  /*In case of no image*/
-  color: white;
-  background-color: black;
-}
-
-.container a {
-  display: flex;
-  color: white;
-  background-color: black;
-  float: left;
-  text-align:center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  outline: 0 solid transparent;
-  border: 3px solid transparent;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.container a:hover {
-  outline: 0 solid transparent;
-  border: 3px solid #41b6e6;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.vidContainer {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 35px;
-  height: 0;
-  overflow: hidden;
-}
-
-.resIFrame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
-
 label {
-  display: block;
-  font: 1rem 'Fira Sans', sans-serif;
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
 }
-
 input,
 label {
-  margin: .4rem 0;
+    margin: .4rem 0;
+}
+.large {
+    font-size: 2em;
+}
+button {
+    padding: 4px 16px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#nightToggle{
+        margin: 0 auto;
+        display: block;
 }
 
-/*NEO Table Formatting*/
+/*Inline Form Styling*/
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.form-inline label {
+  margin: 5px 10px 5px 20px;
+}
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/*Nav Styling*/
+.container {
+    display: flex;
+    list-style-type: none;
+    background-image: url("images/Banner_Starfield.jpg");
+    /*In case of no image*/
+    color: white;
+    background-color: black;
+}
+.container a {
+    display: flex;
+    color: white;
+    background-color: black;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: 0 solid transparent;
+    border: 3px solid transparent;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.container a:hover {
+    outline: 0 solid transparent;
+    border: 3px solid #41b6e6;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+/*IFrame Styling*/
+.vidContainer {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+.resIFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/*NEO Table Styling*/
 table#neoTable {
-	border-collapse: collapse;
-  width: 100%;
-  display: block;
-  max-width: fit-content;
-  margin: 0 auto;
-  overflow-x: auto;  
+    border-collapse: collapse;
+    width: 100%;
+    display: block;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
 }
 table#neoTable caption {
-	font-size: larger;
-	padding: 1em;
+    font-size: larger;
+    padding: 1em;
 }
 table#neoTable td {
-	padding: .5em;
-  text-align: center;
+    padding: .5em;
+    text-align: center;
 }
 table#neoTable thead tr {
-	background: rgba(0, 0, 0, 0.85);
+    background: #020403;
 }
-table#neoTable tbody { 
-	vertical-align: middle;
+table#neoTable tbody {
+    vertical-align: middle;
 }
-table#neoTable tbody tr:nth-child(odd) { 
-	background: rgba(0, 0, 0, 0.2);
+table#neoTable tbody tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.2);
 }
 table#neoTable tbody tr:hover {
-	background: rgba(0, 0, 0, 0.7);
-	color: white;
-	cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    cursor: pointer;
 }
 table#neoTable thead tr th a {
-	text-decoration: none;
-	color: white;
-	background: black;
-	padding: .5em;
-	display: block;
+    text-decoration: none;
+    color: white;
+    background: #020403;
+    padding: .5em;
+    display: block;
 }
 table#neoTable thead tr th a:hover {
-	background: rgb(50, 50, 50);
+    background: rgb(50, 50, 50);
 }
+
+/*Survey Form Styling*/
+/*flex-in is the checkboxing styling, flex-out is the rest of the form*/
+#form {
+    width: 50%;
+    max-width: 480px;
+    margin: 2em auto;
+    border: 3px solid #039be5;
+    border-radius: 10px;
+    padding: 1em;
+}
+#form * {
+    box-sizing: border-box;
+}
+#form h3 {
+    text-align: center;
+}
+.flex-out,
+.flex-in {
+    list-style-type: none;
+    padding: 0;
+}
+.flex-out {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.flex-out li,
+.flex-in {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.flex-in {
+    padding: 0px;
+    justify-content: space-between;
+}
+.flex-out > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+.flex-out li label,
+.flex-out li p {
+    padding: 4px;
+}
+.flex-out > li > label,
+.flex-out li p {
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+.flex-out > li > label + *,
+.flex-in {
+    flex: 1 0 120px;
+}
+.flex-out li p {
+    margin: 0;
+}
+.flex-out li input:not([type='checkbox']),
+.flex-out li textarea {
+    padding: 15px;
+    border: none;
+    min-width: 0;
+}
+.flex-out li button {
+    display: block;
+    margin: 0 auto;
+}
+.flex-in li {
+    width: 100px;
+}
+
 
 
 /*Check for screen sizes 700px and under*/
 @media(min-width: 700px) {
-  main {
-    grid-template-columns: repeat(2, 1fr)
-  }
+    main {
+        grid-template-columns: repeat(2, 1fr)
+    }
 }
+
+/*Screen sozes 800 and over*/
+@media (max-width: 800px) {
+    .form-inline input {
+      margin: 10px 0;
+    }
+    
+    .form-inline {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
 
 /*Check for screen sizes 600px and under*/
 @media all and (max-width: 600px) {
 
-  .container {
-    flex-wrap: wrap;
-  }
+    .container {
+        flex-wrap: wrap;
+    }
 
-  /*Form two columns*/
-  .container > li {
-    flex-basis: 50%;
-  }
+    /*Form two columns*/
+    .container>li {
+        flex-basis: 50%;
+    }
 }
 
 /*Check for screen sizes 400px and under*/
 @media all and (max-width: 400px) {
-  /*Form one column*/
-  .container > li {
-    flex-basis: 100%;
-  }
+
+    /*Form one column*/
+    .container>li {
+        flex-basis: 100%;
+    }
 }
 
 /*********************************** Night mode styling below ***********************************/
 
+/*General Styling*/
 .night-mode {
-  background: #020403;
-  color: #d6d2c4;
+    background: #020403;
+    color: #d6d2c4;
 }
 
-.night-mode a:link {
-  color: #00bfb2;
+/*Link Styling*/
+.night-mode a:link,
+.night-mode a:visited,
+.night-mode a:active {
+    color: #00bfb2;
 }
-
 .night-mode a:hover {
-  color: #41b6e6;
+    color: #41b6e6;
+}
+
+/*Table Styling*/
+.night-mode table#neoTable thead tr {
+    background: #d6d2c4;
 }
 .night-mode table#neoTable tbody tr:nth-child(odd) {
-	background: rgba(65, 65, 65, 0.40);
+    background: rgba(65, 65, 65, 0.40);
 }
 .night-mode table#neoTable tbody tr:hover {
-	background: #d6d2c4;
-	color: #020403;
+    background: #d6d2c4;
+    color: #020403;
 }
 .night-mode table#neoTable thead tr th a {
-	color: #020403;
-	background: #d6d2c4;
+    color: #020403;
+    background: #d6d2c4;
 }
 .night-mode table#neoTable thead tr th a:hover {
-	background: #a09c90;
+    background: #a09c90;
 }

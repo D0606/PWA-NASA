@@ -6,10 +6,10 @@ const currentTheme = localStorage.getItem("mode");
 const geoOutputTxt = document.getElementById("geoOutput");
 const landsatImage = document.getElementById("landsatImg");
 const getLandsatDate = document.getElementById("landsatDate");
-const dateBtn = document.getElementById("satDateButton");
 const getZoomLevel = document.getElementById("zoomSelect");
+const dateForm = document.getElementById("landsatDateForm");
 
-dateBtn.addEventListener("click", getLandsat);
+dateForm.addEventListener("submit", getLandsat);
 
 function maxDate(){
     var today = new Date();
@@ -29,7 +29,8 @@ function maxDate(){
     getLandsatDate.setAttribute("value", today);
 }
 
-function getLandsat() {
+function getLandsat(event) {
+    event.preventDefault();
     if (!navigator.geolocation) {
         geoOutputTxt.innerHTML = "The geolocation feature is not available in your browser.";
     } else {

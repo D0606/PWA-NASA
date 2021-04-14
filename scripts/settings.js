@@ -26,10 +26,10 @@ btnNightToggle.addEventListener("click", toggleMode);
 function toggleMode(){
     if (currentTheme == "night"){
       localStorage.setItem("mode", "day");
-      btnNightToggle.innerHTML = "Click for NIGHT mode.";
+
     } else {
       localStorage.setItem("mode", "night");
-      btnNightToggle.innerHTML = "Click for DAY mode.";
+
     }
     document.body.classList.toggle("night-mode");
     console.log(prefersDarkScheme)

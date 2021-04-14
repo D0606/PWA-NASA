@@ -32,8 +32,10 @@
             <li> <a href="settings.html">Settings</a></li>
         </ul>
     </nav>
-
-    <figure>
+    <article>
+        <section class="centred" id="bandWarn"></section>
+    </article>
+    <figure class="centred">
         <picture>
             <source type="image/webp" srcset="images/4x/earth.webp"
                     media="(min-width:2400px)">
@@ -56,9 +58,33 @@
     </figure>
 
     <header>
-        <h1>Landsat 8.</h1>
+        <h1>Landsat 8 Satellite Imagery</h1>
     </header>
+
     <article>
+        <form id="landsatDateForm" class="form-inline">
+          
+                    <label for="zoomSelect">Zoom Level:</label>
+               
+                    <select name="zoom" id="zoomSelect">
+                        <option value="0.2">--Please choose a zoom level--</option>
+                        <option value="0.1">High</option>
+                        <option value="0.2">Medium</option>
+                        <option value="0.3">Low</option>
+                    </select>
+               
+                    <label for="landsatDate">Select date:</label>
+                
+                    <input type="date" id="landsatDate" name="Landsat Date"
+                    value="" min="2013-08-01" max="" required>
+               
+                    <button type="submit" id="satDateButton">Get Location</button>
+                
+        </form>
+
+    </article>
+
+    <article class="centred">
         <figure>
             <img id="landsatImg" src="images/fallback/spacewalk1x.jpg" alt="Lonely astronaut on spacewalk"
             srcset="images/fallback/spacewalk1x.jpg, images/fallback/spacewalk2x.jpg 2x, images/fallback/spacewalk3x.jpg 3x, images/fallback/spacewalk4x.jpg 4x">
@@ -66,31 +92,14 @@
         <section id="geoOutput"></section>
     </article>
 
-    <article>
-        <label for="landsatDate">Select date:</label>
-        <input type="date" id="landsatDate" name="Landsat Date"
-        value="" min="2013-08-01" max="" required>
-        
-        <label for="zoomSelect">Zoom Level:</label>
-        <select name="zoom" id="zoomSelect">
-            <option value="0.2">--Please choose a zoom level--</option>
-            <option value="0.1">High</option>
-            <option value="0.2">Medium</option>
-            <option value="0.3">Low</option>
-        </select>
-        <button type="button" id="satDateButton">Get Location</button>
-    </article>
-
-    <footer>
-        <h2>Goals for this page:<br><em>(Subject to change.)</em></h2>
+    <footer class="centred">
+        <strong>TODO:</strong>
         <ul>
-            <li>Should use the browser location data to display a Landsat image. DONE</li>
-            <li>Potential to change Landsat date. DONE</li>
-            <li>Potentially with zoom alteration in three choices. - Three choices of selection. DONE</li>
-            <li>Validate with dates no later than today, not before 8 years ago. min/max dates. DONE</li>
+            <li>Possibly line the fields.</li>
         </ul>
     </footer>
 
+    <script src="scripts/connection.js"></script>
     <script>
       //check whether browser support service workers
       if ('serviceWorker' in navigator) {

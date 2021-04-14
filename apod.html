@@ -32,7 +32,10 @@
         <li> <a href="settings.html">Settings</a></li>
       </ul>
     </nav>
-    <figure>
+    <article>
+      <section class="centred" id="bandWarn"></section>
+    </article>
+    <figure class="centred">
       <picture>
           <source type="image/webp" srcset="images/4x/hubble.webp"
                   media="(min-width:2400px)">
@@ -54,11 +57,11 @@
       </picture>
     </figure>
     <header>
-      <h1>NASA Astronomical Picture of the Day</h1>
+      <h1 class="centred">NASA Astronomical Picture of the Day</h1>
     </header>
 
     <article>
-      <figure id="apodContent">
+      <figure class="centred" id="apodContent">
         <picture>
           <img id="dailyPic" src="images/fallback/spacewalk1x.jpg" alt="Lonely astronaut on spacewalk"
           srcset="images/fallback/spacewalk1x.jpg, images/fallback/spacewalk2x.jpg 2x, images/fallback/spacewalk3x.jpg 3x, images/fallback/spacewalk4x.jpg 4x">
@@ -70,14 +73,14 @@
       <p id=dailyDesc>Fetching description ...</p>
     </article>
 
-    <footer>
-      <h4>Goals for this page:<br><em>(Subject to change.)</em></h4>
+    <footer class="centred">
+      <strong>TODO:</strong>
       <ul>
-          <li>Display a picture of the day. DONE</li>
           <li>Add an on image click that sends you to the HD URL.</li>
       </ul>
     </footer>
     
+    <script src="scripts/connection.js"></script>
     <script>
       //check whether browser support service workers
       if ('serviceWorker' in navigator) {

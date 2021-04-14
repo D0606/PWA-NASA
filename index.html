@@ -14,7 +14,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="msapplication-starturl" content="/index.html">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="This page explains the app and the functions within it, also contains a form.">
+    <meta name="description" content="MAD6 - PWA Assignment. Using several NASA APIs, this web
+                                      app is designed to showcase various web development technologies
+                                      and techniques, in order to satisfy a marking criteria.">
     <link rel="icon" type="image/png" sizes="192x192" href="images/pluto-192x192.png">
     <link rel="apple-touch-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="512x512" href="images/pluto-192x192.png">
@@ -32,6 +34,9 @@
           <li> <a href="settings.html">Settings</a></li>
       </ul>
     </nav>
+    <article class="centred">
+      <section id="bandWarn"></section>
+    </article>
     <figure>
         <picture>
             <source type="image/webp" srcset="images/4x/mercury.webp"
@@ -50,45 +55,111 @@
                     media="(min-width:600px)">
             <source type="image/jpeg" srcset="images/fallback/mercury1x.jpg"
                     media="(min-width:600px)">
-            <img src="images/fallback/mercury1x.jpg" alt="Mercury in partial shadow.">
+            <img src="images/fallback/mercury1x.jpg" alt="A banner showing Mercury in partial shadow.">
         </picture>
     </figure>
     <header>
-      <h1>PWA Assignment for MAD6.</h1>
+      <h1 class="centred">PWA Assignment for MAD6.</h1>
     </header>
 
     <article>
       <h2>About this site.</h2>
-        <p>This site uses various NASA Open APIs to to a variety of activities. You can navigate betwen these activities by selecting an option from the navbar at the top of the screen.
+        <p>This site uses various NASA Open APIs to do a variety of activities. You can navigate between these activities by selecting an option from the navbar at the top of the screen.
             Each page will have a small description of the API, along with instructions on how to use it. Please consider completing my feedback form below!</p>
     </article>
 
-    <footer>
-      <h3>Goals for this site:<br><em>(Subject to change.)</em></h3>
+
+    <section id="form">
+        <h3>Feedback and suggestions:</h3>
+        <form>
+            <ul class="flex-out">
+                <li>
+                    <label for="usrName">Name:</label>
+                    <input type="text" name="name" id="usrName" placeholder="Your name." minlength="3" maxlength="250" required/><br><br>
+                </li>
+                <li>
+                    <label for="usrEmail">E-mail:</label>
+                    <input type="email" name="email" id="usrEmail" placeholder="Your e-mail." required/>
+                </li>
+                <li>
+                    <label for="usrFav">Which page was your favourite:</label>
+                    <select id="usrFav">
+                        <option value="none">--Please Select--</option>
+                        <option value="apod">APOD</option>
+                        <option value="neo">Asteroids</option>
+                        <option value="landsat">Landsat</option>
+                        <option value="gallery">Gallery</option>
+                    </select>
+                </li>
+                <li>
+                    <p>Which features from the NASA API library would you most like to see here:</p>
+                    <ul class="flex-in">
+                        <li>
+                            <input type="checkbox" id="api1" name="donki">
+                            <label for="api1">DONKI</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="api2" name="epic">
+                            <label for="api2">EPIC</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="api3" name="insight">
+                            <label for="api3">InSight</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="api4" name="techport">
+                            <label for="api4">Techport</label>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <label for="suggestions">Comments:</label>
+                    <textarea name="comments" id="suggestions" rows="6" placeholder="Please enter your comments here." required></textarea>
+                </li>
+                <li>
+                    <button id="surveyButton" type="submit" name="surveyButton">Submit</button>
+                </li>
+            </ul>
+        </form>
+    </section>
+
+
+    <footer class="centred">
+      <strong>TODO:</strong>
       <ul>
-          <li>Complete the form.</li>
+          <li>Complete the form with HTML5 validation.</li>
           <li>Brief overview of pages.</li>
+          <li>Network caching correctly from slow connections.</li>
+          <li>CSS Code tidying.</li>
+          <li>Commenting.</li>
+          <li>Final footer.</li>
+          <li>Last code checks.</li>
+          <li>General tidying.</li>
       </ul>
+      <p>Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a></p>
+      <p>Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and
+          <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on
+          <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
-    
+
+    <script src="scripts/connection.js"></script>
     <script>
-      //check whether browser support service workers
-      if ('serviceWorker' in navigator) {
-          //wait until page loaded to avoid delaying rendering
-          window.addEventListener('load', function() {
-              //register service worker
-              navigator.serviceWorker.register('serviceworker.js').then(
-                  function(registration) {
-                      console.log('Service worker registration successful', 
-                                   registration);
-                  }, 
-                  function(err) {
-                      console.log('Service worker registration failed', err);
-              });
-          });
-      }
+        //check whether browser support service workers
+        if ('serviceWorker' in navigator) {
+            //wait until page loaded to avoid delaying rendering
+            window.addEventListener('load', function() {
+                //register service worker
+                navigator.serviceWorker.register('serviceworker.js').then(
+                    function(registration) {
+                        console.log('Service worker registration successful',
+                            registration);
+                    },
+                    function(err) {
+                        console.log('Service worker registration failed', err);
+                    });
+            });
+        }
     </script>
     <script src="scripts/home.js"></script>
-
   </body>
 </html>
