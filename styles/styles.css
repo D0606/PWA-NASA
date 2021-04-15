@@ -1,58 +1,90 @@
 /*General Styling*/
+* {
+    font-family: Verdana, Helvetica, Tahoma, Arial, sans-serif;
+}
+
 main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+
 body {
     font: 1em system-ui, sans-serif;
-    background-color: rgb(213, 216, 223);
+    background-color: #d5d8df;
 }
+
 .centred {
     list-style-position: inside;
     text-align: center;
 }
+
 img {
     max-width: 100%;
     height: auto;
 }
+
 label {
     display: block;
-    font: 1rem 'Fira Sans', sans-serif;
 }
+
 input,
 label {
     margin: .4rem 0;
 }
+
 .large {
     font-size: 2em;
 }
+
 button {
     padding: 4px 16px;
     border: none;
     border-radius: 2px;
     cursor: pointer;
 }
-#nightToggle{
-        margin: 0 auto;
-        display: block;
+
+#nightToggle {
+    margin: 0 auto;
+    display: block;
+}
+
+footer {
+    width: 100%;
+    background: inherit;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    opacity: 85%;
+}
+
+#bandWarn {
+    font-size: 28px;
+    background: #020403;
+    color: #d6d2c4;
+}
+
+.infoText {
+    margin: 0 auto;
+    padding: 1em;
 }
 
 /*Inline Form Styling*/
-.form-inline {  
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  box-sizing: border-box;
-  justify-content: center;
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
 }
 .form-inline label {
-  margin: 5px 10px 5px 20px;
+    margin: 5px 10px 5px 20px;
 }
 .form-inline input {
-  vertical-align: middle;
-  margin: 5px 10px 5px 0;
-  background-color: #fff;
-  border: 1px solid #ddd;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }
 
 /*Nav Styling*/
@@ -81,6 +113,7 @@ button {
 }
 .container a:hover {
     outline: 0 solid transparent;
+    color: #41b6e6;
     border: 3px solid #41b6e6;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -107,8 +140,7 @@ button {
 
 /*NEO Table Styling*/
 table#neoTable {
-    border-collapse: collapse;
-    width: 100%;
+    width: 99%;
     display: block;
     max-width: fit-content;
     margin: 0 auto;
@@ -182,19 +214,19 @@ table#neoTable thead tr th a:hover {
     padding: 0px;
     justify-content: space-between;
 }
-.flex-out > li:not(:last-child) {
+.flex-out>li:not(:last-child) {
     margin-bottom: 20px;
 }
 .flex-out li label,
 .flex-out li p {
     padding: 4px;
 }
-.flex-out > li > label,
+.flex-out>li>label,
 .flex-out li p {
     flex: 1 0 120px;
     max-width: 220px;
 }
-.flex-out > li > label + *,
+.flex-out>li>label+*,
 .flex-in {
     flex: 1 0 120px;
 }
@@ -216,7 +248,6 @@ table#neoTable thead tr th a:hover {
 }
 
 
-
 /*Check for screen sizes 700px and under*/
 @media(min-width: 700px) {
     main {
@@ -224,17 +255,17 @@ table#neoTable thead tr th a:hover {
     }
 }
 
-/*Screen sozes 800 and over*/
+/*Screen sizes 800 and over*/
 @media (max-width: 800px) {
     .form-inline input {
-      margin: 10px 0;
+        margin: 10px 0;
     }
-    
+
     .form-inline {
-      flex-direction: column;
-      align-items: stretch;
+        flex-direction: column;
+        align-items: stretch;
     }
-  }
+}
 
 /*Check for screen sizes 600px and under*/
 @media all and (max-width: 600px) {
@@ -250,7 +281,7 @@ table#neoTable thead tr th a:hover {
 }
 
 /*Check for screen sizes 400px and under*/
-@media all and (max-width: 400px) {
+@media all and (max-width: 290px) {
 
     /*Form one column*/
     .container>li {
@@ -264,6 +295,11 @@ table#neoTable thead tr th a:hover {
 .night-mode {
     background: #020403;
     color: #d6d2c4;
+}
+
+.night-mode #bandWarn {
+    background: #d5d8df;
+    color: black;
 }
 
 /*Link Styling*/

@@ -40,7 +40,7 @@ function getAPOD() {
 
     }).catch(function(error) {
         dailyPicContent.innerHTML =
-                `
+            `
                 <picture>
                     <img id="dailyPic" src="images/fallback/spacewalk1x.jpg" alt="Lonely astronaut on spacewalk"
                     srcset="images/fallback/spacewalk1x.jpg, images/fallback/spacewalk2x.jpg 2x, images/fallback/spacewalk3x.jpg 3x, images/fallback/spacewalk4x.jpg 4x">

@@ -26,15 +26,17 @@
         <ul class="container">
             <li> <a href="index.html">Home</a></li>
             <li> <a href="apod.html">APOD</a></li>
-            <li> <a href="neo.html">Asteroids</a></li>
+            <li> <a href="neo.html">NEO</a></li>
             <li> <a href="landsat.html">Landsat</a></li>
             <li> <a href="gallery.html">Gallery</a></li>
             <li> <a href="settings.html">Settings</a></li>
         </ul>
     </nav>
+
     <article>
         <section class="centred" id="bandWarn"></section>
     </article>
+
     <figure  class="centred">
         <picture>
             <source type="image/webp" srcset="images/4x/asteroids.webp"
@@ -56,15 +58,18 @@
             <img src="images/fallback/asteroids1x.jpg" alt="A CGI field of asteroids backlit by the sun.">
         </picture>
     </figure>
-    <h1 class="centred">Near Earth Objects (Orbiting Asteroids)</h1>
+
+    <header>
+        <br><h1 class="centred">Near Earth Objects (Orbiting Asteroids)</h1><br><br>
+    </header>
 
     <form id="neoDateForm" class="form-inline">
         <label for="neoDate">Select date:</label>
         <input type="date" id="neoDate" name="NEO Date" value="" min="1900-01-01" max="2201-01-01" required>
         <button type="submit" id="neoDateButton">Search</button>
-    </form>
+    </form><br>
     
-    <table id="neoTable" style="width: 100%;">
+    <table id="neoTable">
         <caption>Table of Near Earth Objects</caption>
         <thead>
             <tr>
@@ -79,13 +84,24 @@
             </tr>
         </thead>
         <tbody id="neoTableBody"></tbody>
-    </table>
+    </table><br><br><br>
 
-    <footer class="centred">
-        <strong>TODO:<br></strong>
-        <ul>
-            <li>Nowt.</li>
-        </ul>
+    <section class="infoText">
+        <article>
+            <h2>About NEO</h2><br>
+            <p>The Near Earth Orbit Web Service (NeoWs) allows you to search for visiting asteroids, based on a given date.</p>
+            <p>The table will show all known asteroids, on their closest approach, in tabular format.</p>
+            <p>Each asteroid comes with a link to the Jet Propulsion Laboratory (JPL) website for the object.</p>
+            <p>The search range is HTML5 validated and will accept dates from 01/01/1900 to 01/01/2200</p>
+        </article>
+    </section><br><br>
+
+
+    <footer class="centred"><p>&copy;2021 - Daniel Truman - 04908117 - All Rights Reserved.&nbsp;
+        Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a>&nbsp;
+        Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and
+        <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on
+        <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
 
     <script src="scripts/connection.js"></script>

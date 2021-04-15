@@ -20,24 +20,24 @@
     <link rel="icon" type="image/png" sizes="192x192" href="images/pluto-192x192.png">
     <link rel="apple-touch-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="512x512" href="images/pluto-192x192.png">
-    <title>Home</title>
+    <title>NASAExplorer</title>
 </head>
 
 <body>
     <nav>
-      <ul class="container">
-          <li> <a href="index.html">Home</a></li>
-          <li> <a href="apod.html">APOD</a></li>
-          <li> <a href="neo.html">Asteroids</a></li>
-          <li> <a href="landsat.html">Landsat</a></li>
-          <li> <a href="gallery.html">Gallery</a></li>
-          <li> <a href="settings.html">Settings</a></li>
-      </ul>
+        <ul class="container">
+            <li> <a href="index.html">Home</a></li>
+            <li> <a href="apod.html">APOD</a></li>
+            <li> <a href="neo.html">NEO</a></li>
+            <li> <a href="landsat.html">Landsat</a></li>
+            <li> <a href="gallery.html">Gallery</a></li>
+            <li> <a href="settings.html">Settings</a></li>
+        </ul>
     </nav>
     <article class="centred">
       <section id="bandWarn"></section>
     </article>
-    <figure>
+    <figure class="centred">
         <picture>
             <source type="image/webp" srcset="images/4x/mercury.webp"
                     media="(min-width:2400px)">
@@ -58,28 +58,37 @@
             <img src="images/fallback/mercury1x.jpg" alt="A banner showing Mercury in partial shadow.">
         </picture>
     </figure>
+
     <header>
-      <h1 class="centred">PWA Assignment for MAD6.</h1>
+        <br><h1 class="centred">PWA Assignment for Mobile Application Development: COSE60594</h1><br><br>
     </header>
 
-    <article>
-      <h2>About this site.</h2>
-        <p>This site uses various NASA Open APIs to do a variety of activities. You can navigate between these activities by selecting an option from the navbar at the top of the screen.
-            Each page will have a small description of the API, along with instructions on how to use it. Please consider completing my feedback form below!</p>
-    </article>
+    <section class="infoText">
+        <article class="infoText">
+        <h2>About this project</h2><br>
+            <p>This project uses various <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA Open APIs</a> to do a variety of interesting activities. You can navigate between these activities by selecting an option from the navbar at the top of the screen.
+                Each page will have an expanded description of the API and features, along with instructions on how to use it. Please consider completing my feedback form below!</p><br>
+            <p> - <a href="apod.html">APOD:</a> The NASA Astronomical Picture of the Day (APOD) is described as one of the most popular sites of all federal agencies in the United States. Media can be video or photograph and is displayed with its description and title!</p>
+            <p> - <a href="neo.html">NEO:</a> The Near Earth Object Web Service (NeoWs) provides asteroid information based on their closest approach date. Enter a date and see which asteroids are visiting!</p>
+            <p> - <a href="landsat.html">Landsat:</a> Landsat 8 is an 8-year-old near-polar orbit imaging satellite. Select a date and zoom level and see period specific land satellite imagery from your GPS location!</p>
+            <p> - <a href="gallery.html">Gallery:</a> Several large resolution pictures of incredible sights and scenes, provided by NASA. The images are displayed in an art-directed format for viewing on several devices!</p>
+            <p> - <a href="settings.html">Settings:</a> If you want a change of colour, visit here to cycle to the night side or vice versa!</p><br>
+            <p>Some pages will have an expanded description of the API and features at the bottom of the page, along with instructions on how to use it. Please consider completing my feedback form below and thanks for visiting!</p>
+        </article><br><br>
+    </section>
 
 
     <section id="form">
         <h3>Feedback and suggestions:</h3>
-        <form>
+        <form id="survForm">
             <ul class="flex-out">
                 <li>
                     <label for="usrName">Name:</label>
-                    <input type="text" name="name" id="usrName" placeholder="Your name." minlength="3" maxlength="250" required/><br><br>
+                    <input type="text" id="usrName" placeholder="Your name." minlength="1" maxlength="250" required/><br><br>
                 </li>
                 <li>
                     <label for="usrEmail">E-mail:</label>
-                    <input type="email" name="email" id="usrEmail" placeholder="Your e-mail." required/>
+                    <input type="email" id="usrEmail" placeholder="Your e-mail." autocomplete="email" required/>
                 </li>
                 <li>
                     <label for="usrFav">Which page was your favourite:</label>
@@ -114,32 +123,20 @@
                 </li>
                 <li>
                     <label for="suggestions">Comments:</label>
-                    <textarea name="comments" id="suggestions" rows="6" placeholder="Please enter your comments here." required></textarea>
+                    <textarea id="suggestions" rows="6" placeholder="Please enter your comments here." required></textarea>
                 </li>
                 <li>
-                    <button id="surveyButton" type="submit" name="surveyButton">Submit</button>
+                    <button id="surveyButton" type="submit">Submit</button>
                 </li>
             </ul>
         </form>
     </section>
 
-
-    <footer class="centred">
-      <strong>TODO:</strong>
-      <ul>
-          <li>Complete the form with HTML5 validation.</li>
-          <li>Brief overview of pages.</li>
-          <li>Network caching correctly from slow connections.</li>
-          <li>CSS Code tidying.</li>
-          <li>Commenting.</li>
-          <li>Final footer.</li>
-          <li>Last code checks.</li>
-          <li>General tidying.</li>
-      </ul>
-      <p>Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a></p>
-      <p>Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and
-          <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on
-          <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+    <footer class="centred"><p>&copy;2021 - Daniel Truman - 04908117 - All Rights Reserved.&nbsp;
+        Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a>&nbsp;
+        Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and
+        <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on
+        <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
 
     <script src="scripts/connection.js"></script>

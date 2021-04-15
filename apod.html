@@ -26,11 +26,11 @@
       <ul class="container">
         <li> <a href="index.html">Home</a></li>
         <li> <a href="apod.html">APOD</a></li>
-        <li> <a href="neo.html">Asteroids</a></li>
+        <li> <a href="neo.html">NEO</a></li>
         <li> <a href="landsat.html">Landsat</a></li>
         <li> <a href="gallery.html">Gallery</a></li>
         <li> <a href="settings.html">Settings</a></li>
-      </ul>
+    </ul>
     </nav>
     <article>
       <section class="centred" id="bandWarn"></section>
@@ -56,31 +56,34 @@
           <img src="images/fallback/hubble1x.jpg" alt="Hubble telescope against Earth as a background.">
       </picture>
     </figure>
+
     <header>
-      <h1 class="centred">NASA Astronomical Picture of the Day</h1>
+      <br><h1 class="centred">NASA Astronomical Picture of the Day</h1><br><br>
     </header>
 
-    <article>
-      <figure class="centred" id="apodContent">
-        <picture>
-          <img id="dailyPic" src="images/fallback/spacewalk1x.jpg" alt="Lonely astronaut on spacewalk"
-          srcset="images/fallback/spacewalk1x.jpg, images/fallback/spacewalk2x.jpg 2x, images/fallback/spacewalk3x.jpg 3x, images/fallback/spacewalk4x.jpg 4x">
-        </picture>
-        <figcaption>Fetching picture title ...</figcaption>
-      </figure>
-      <h2>Description:</h2>
-      <h3 id="dailyTitle">Fetching title ...</h3>
-      <p id=dailyDesc>Fetching description ...</p>
-    </article>
+    <section class="infoText">
+      <article>
+        <figure class="centred" id="apodContent">
+          <picture>
+            <img id="dailyPic" src="images/fallback/spacewalk1x.jpg" alt="Lonely astronaut on spacewalk"
+            srcset="images/fallback/spacewalk1x.jpg, images/fallback/spacewalk2x.jpg 2x, images/fallback/spacewalk3x.jpg 3x, images/fallback/spacewalk4x.jpg 4x">
+          </picture>
+          <figcaption>Fetching picture title ...</figcaption>
+        </figure><br><br>
+        <h2>Description:</h2><br>
+        <h3 id="dailyTitle">Fetching title ...</h3>
+        <p id=dailyDesc>Fetching description ...</p>
+      </article>
+    </section><br><br>
 
-    <footer class="centred">
-      <strong>TODO:</strong>
-      <ul>
-          <li>Add an on image click that sends you to the HD URL.</li>
-      </ul>
+    <footer class="centred"><p>&copy;2021 - Daniel Truman - 04908117 - All Rights Reserved.&nbsp;
+      Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a>&nbsp;
+      Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and
+      <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on
+      <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
     
-    <script src="scripts/connection.js"></script>
+    
     <script>
       //check whether browser support service workers
       if ('serviceWorker' in navigator) {
@@ -99,6 +102,7 @@
       }
     </script>
     <script src="scripts/apod.js"></script>
+    <script src="scripts/connection.js"></script>
 
   </body>
 </html>

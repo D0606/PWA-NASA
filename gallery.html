@@ -23,14 +23,14 @@
 
 <body>
     <nav>
-      <ul class="container">
-          <li> <a href="index.html">Home</a></li>
-          <li> <a href="apod.html">APOD</a></li>
-          <li> <a href="neo.html">Asteroids</a></li>
-          <li> <a href="landsat.html">Landsat</a></li>
-          <li> <a href="gallery.html">Gallery</a></li>
-          <li> <a href="settings.html">Settings</a></li>
-      </ul>
+        <ul class="container">
+                <li> <a href="index.html">Home</a></li>
+                <li> <a href="apod.html">APOD</a></li>
+                <li> <a href="neo.html">NEO</a></li>
+                <li> <a href="landsat.html">Landsat</a></li>
+                <li> <a href="gallery.html">Gallery</a></li>
+                <li> <a href="settings.html">Settings</a></li>
+            </ul>
     </nav>
     <article>
         <section class="centred" id="bandWarn"></section>
@@ -58,7 +58,7 @@
     </figure>
 
     <header>
-        <h1 class="centred">Picture Gallery</h1>
+        <br><h1 class="centred">Picture Gallery</h1><br><br>
     </header>
 
     <article class="centred">
@@ -80,10 +80,10 @@
                         media="(min-width:450px)">
                 <source type="image/jpeg" srcset="images/gallery/crop-nasa-astrohelm9x16.jpg"
                         media="(min-width:450px)">
-                <img src="images/gallery/crop-nasa-astrohelm9x16.jpg" alt="An astronaut takes a picture of himself in his EVA suit, the reflection in his visor of him holding the camera is clear.">
+                <img src="images/gallery/crop-nasa-astrohelm9x16.jpg" alt="An astronaut takes a picture of themself in their EVA suit.">
             </picture>
-            <figcaption>An astronaut takes a picture of himself in his EVA suit.</figcaption>
-        </figure>
+            <figcaption>An astronaut takes a picture of themself in their EVA suit.</figcaption>
+        </figure><br>
         <figure>
             <picture>
                 <source type="image/webp" srcset="images/gallery/crop-nasa-geneapolloLx16x9.webp"
@@ -105,7 +105,7 @@
                 <img src="images/gallery/crop-nasa-geneapollo9x16.jpg" alt="Apollo 17 astronaut Gene Cernan on the moon, in the Lunar Roving Vehicle, 1972.">
             </picture>
             <figcaption>Apollo 17 astronaut Gene Cernan on the moon, in the Lunar Roving Vehicle, 1972.</figcaption>
-        </figure>
+        </figure><br>
         <figure>
             <picture>
                 <source type="image/webp" srcset="images/gallery/crop-nasa-hurricaneLx16x9.webp"
@@ -127,7 +127,7 @@
                 <img src="images/gallery/crop-nasa-hurricane9x16.jpg" alt="A hurricane, as seen from orbit.">
             </picture>
             <figcaption>A hurricane, as seen from orbit.</figcaption>
-        </figure>
+        </figure><br>
         <figure>
             <picture>
                 <source type="image/webp" srcset="images/gallery/crop-nasa-satellitecloudLx16x9.webp"
@@ -150,13 +150,15 @@
             </picture>
             <figcaption>A satellite orbits in the picture whilst clouds swirl on the surface of Earth.</figcaption>
         </figure>
-    </article>
-    <footer class="centred">
-        <strong>TODO:</strong>
-        <ul>
-            <li>Nowt.</li>
-        </ul>
+    </article><br>
+
+    <footer class="centred"><p>&copy;2021 - Daniel Truman - 04908117 - All Rights Reserved.&nbsp;
+        Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a>&nbsp;
+        Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and
+        <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on
+        <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
+
 </body>
 
 <script src="scripts/connection.js"></script>

@@ -11,20 +11,20 @@ const dateForm = document.getElementById("landsatDateForm");
 
 dateForm.addEventListener("submit", getLandsat);
 
-function maxDate(){
+function maxDate() {
     var today = new Date();
     var dd = today.getDate();
-    var mm = today.getMonth()+1; //Remember January == 0
+    var mm = today.getMonth() + 1; //Remember January == 0
     var yyyy = today.getFullYear();
 
     //Build today's correct string format
-    if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
-    today = yyyy+'-'+mm+'-'+dd;
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+    today = yyyy + '-' + mm + '-' + dd;
     getLandsatDate.setAttribute("max", today);
     getLandsatDate.setAttribute("value", today);
 }
@@ -92,15 +92,13 @@ function gotError(error) {
 function setMode() {
     if (currentTheme != null) {
         if (currentTheme === "night") {
-        document.body.classList.toggle("night-mode");
+            document.body.classList.toggle("night-mode");
         }
-    }
-    else {
+    } else {
         if (prefersDarkScheme.matches) {
             document.body.classList.toggle("night-mode");
             localStorage.setItem("mode", "night");
-        }
-        else {
+        } else {
             localStorage.setItem("mode", "day");
         }
     }

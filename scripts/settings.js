@@ -4,18 +4,16 @@ const btnNightToggle = document.getElementById("nightToggle");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const currentTheme = localStorage.getItem("mode");
 
-function setMode(){
+function setMode() {
     if (currentTheme != null) {
         if (currentTheme == "night") {
-        document.body.classList.toggle("night-mode");
+            document.body.classList.toggle("night-mode");
         }
-    }
-    else {
+    } else {
         if (prefersDarkScheme.matches) {
             document.body.classList.toggle("night-mode");
             localStorage.setItem("mode", "night");
-        }
-        else {
+        } else {
             localStorage.setItem("mode", "day");
         }
     }
@@ -23,12 +21,12 @@ function setMode(){
 
 btnNightToggle.addEventListener("click", toggleMode);
 
-function toggleMode(){
-    if (currentTheme == "night"){
-      localStorage.setItem("mode", "day");
+function toggleMode() {
+    if (currentTheme == "night") {
+        localStorage.setItem("mode", "day");
 
     } else {
-      localStorage.setItem("mode", "night");
+        localStorage.setItem("mode", "night");
 
     }
     document.body.classList.toggle("night-mode");

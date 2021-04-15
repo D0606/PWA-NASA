@@ -26,15 +26,17 @@
         <ul class="container">
             <li> <a href="index.html">Home</a></li>
             <li> <a href="apod.html">APOD</a></li>
-            <li> <a href="neo.html">Asteroids</a></li>
+            <li> <a href="neo.html">NEO</a></li>
             <li> <a href="landsat.html">Landsat</a></li>
             <li> <a href="gallery.html">Gallery</a></li>
             <li> <a href="settings.html">Settings</a></li>
         </ul>
     </nav>
+    
     <article>
         <section class="centred" id="bandWarn"></section>
     </article>
+
     <figure class="centred">
         <picture>
             <source type="image/webp" srcset="images/4x/astronaut.webp"
@@ -56,17 +58,21 @@
             <img src="images/fallback/astronaut1x.jpg" alt="An astronaut working in space.">
         </picture>
     </figure>
-    <h1 class="centred">Settings</h1>
+
+    <header>
+        <br><h1 class="centred">Settings</h1><br><br>
+    </header>
     
+    <section>
+        <p class="centred"> Click to toggle dark mode </p>
+        <button id="nightToggle">Toggle Day/Night Mode</button>
+    </section><br><br>
 
-    <p class="centred"> Click to toggle dark mode </p>
-    <button id="nightToggle">Toggle Day/Night Mode</button>
-
-    <footer class="centred">
-        <strong>TODO:</strong>
-    <ul>
-        <li>Nowt.</li>
-    </ul>
+    <footer class="centred"><p>&copy;2021 - Daniel Truman - 04908117 - All Rights Reserved.&nbsp;
+        Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a>&nbsp;
+        Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and
+        <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on
+        <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
     
     <script src="scripts/connection.js"></script>

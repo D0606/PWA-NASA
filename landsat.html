@@ -26,7 +26,7 @@
         <ul class="container">
             <li> <a href="index.html">Home</a></li>
             <li> <a href="apod.html">APOD</a></li>
-            <li> <a href="neo.html">Asteroids</a></li>
+            <li> <a href="neo.html">NEO</a></li>
             <li> <a href="landsat.html">Landsat</a></li>
             <li> <a href="gallery.html">Gallery</a></li>
             <li> <a href="settings.html">Settings</a></li>
@@ -58,31 +58,21 @@
     </figure>
 
     <header>
-        <h1>Landsat 8 Satellite Imagery</h1>
+        <br><h1 class="centred">Landsat 8 Satellite Imagery</h1><br><br>
     </header>
 
-    <article>
-        <form id="landsatDateForm" class="form-inline">
-          
-                    <label for="zoomSelect">Zoom Level:</label>
-               
-                    <select name="zoom" id="zoomSelect">
-                        <option value="0.2">--Please choose a zoom level--</option>
-                        <option value="0.1">High</option>
-                        <option value="0.2">Medium</option>
-                        <option value="0.3">Low</option>
-                    </select>
-               
-                    <label for="landsatDate">Select date:</label>
-                
-                    <input type="date" id="landsatDate" name="Landsat Date"
-                    value="" min="2013-08-01" max="" required>
-               
-                    <button type="submit" id="satDateButton">Get Location</button>
-                
-        </form>
-
-    </article>
+    <form id="landsatDateForm" class="form-inline">
+        <label for="zoomSelect">Zoom Level:</label>
+        <select name="zoom" id="zoomSelect">
+            <option value="0.2">--Please choose a zoom level--</option>
+            <option value="0.1">High</option>
+            <option value="0.2">Medium</option>
+            <option value="0.3">Low</option>
+        </select>
+        <label for="landsatDate">Select date:</label>
+        <input type="date" id="landsatDate" name="Landsat Date" value="" min="2013-08-01" max="" required>
+        <button type="submit" id="satDateButton">Get Location</button>
+    </form><br>
 
     <article class="centred">
         <figure>
@@ -90,13 +80,25 @@
             srcset="images/fallback/spacewalk1x.jpg, images/fallback/spacewalk2x.jpg 2x, images/fallback/spacewalk3x.jpg 3x, images/fallback/spacewalk4x.jpg 4x">
         </figure>
         <section id="geoOutput"></section>
-    </article>
+    </article><br><br><br>
 
-    <footer class="centred">
-        <strong>TODO:</strong>
-        <ul>
-            <li>Possibly line the fields.</li>
-        </ul>
+    <section class="infoText">
+        <article>
+            <h2>About Landsat</h2><br>
+            <p>Select a zoom level and date and click the "Get Location" button. After Location access from your device has been granted, the placeholder image will be replaced by the retrieved image based on your location.</p>
+            <p>Your approximate location will be shown, below the image, in longitude and latitude, along with the degree of accuracy. Any issues with retrieving your GPS location will be reported here.</p>
+            <p>If you wish to change the date, or the zoom level, simply reselect the options and click "Get Location" again.</p>
+            <p>Landsat 8 was launched from Vandenberg, California, USA in 2013, for more information, visit the related 
+                <a href="https://www.usgs.gov/core-science-systems/nli/landsat/landsat-8?qt-science_support_page_related_con=0#qt-science_support_page_related_con">USGS</a> site.</p>
+            <p>The search range is HTML5 validated and will accept dates from 01/08/2013 to the current date.</p>
+        </article>
+    </section><br><br>
+
+    <footer class="centred"><p>&copy;2021 - Daniel Truman - 04908117 - All Rights Reserved.&nbsp;
+        Powered by <a href="https://api.nasa.gov/?search=sound#browseAPI">NASA's API library!</a>&nbsp;
+        Photos by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> and
+        <a href="https://unsplash.com/@usgs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">USGS</a> on
+        <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
 
     <script src="scripts/connection.js"></script>

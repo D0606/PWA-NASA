@@ -11,20 +11,20 @@ var tableBody = "";
 
 dateForm.addEventListener("submit", getNEO);
 
-function getToday(){
+function getToday() {
     var today = new Date();
     var dd = today.getDate();
-    var mm = today.getMonth()+1; //Remember January == 0
+    var mm = today.getMonth() + 1; //Remember January == 0
     var yyyy = today.getFullYear();
 
     //Build today's correct string format
-    if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
-    today = yyyy+'-'+mm+'-'+dd;
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+    today = yyyy + '-' + mm + '-' + dd;
     getDate.setAttribute("value", today);
 }
 
@@ -32,7 +32,6 @@ function getNEO(event) {
     event.preventDefault();
     //console.log(getDate.value);
     fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${getDate.value}&end_date=${getDate.value}&api_key=Z9vNJRtaCbaIrzOk6PAROFfpbFvdTlpW0k59SRhL`).then(function(response) {
-        //could also return response.text() 
         return response.json();
     }).then(function(neo) {
         tableBody = ""
@@ -70,7 +69,7 @@ function getNEO(event) {
 
     }).catch(function(error) {
         getTable.innerHTML =
-                `
+            `
                 <picture>
                     <img id="dailyPic" src="images/fallback/spacewalk1x.jpg" alt="Lonely astronaut on spacewalk."
                     srcset="images/fallback/spacewalk1x.jpg, images/fallback/spacewalk2x.jpg 2x, images/fallback/spacewalk3x.jpg 3x, images/fallback/spacewalk4x.jpg 4x">
@@ -84,15 +83,13 @@ function getNEO(event) {
 function setMode() {
     if (currentTheme != null) {
         if (currentTheme === "night") {
-        document.body.classList.toggle("night-mode");
+            document.body.classList.toggle("night-mode");
         }
-    }
-    else {
+    } else {
         if (prefersDarkScheme.matches) {
             document.body.classList.toggle("night-mode");
             localStorage.setItem("mode", "night");
-        }
-        else {
+        } else {
             localStorage.setItem("mode", "day");
         }
     }
